@@ -1,0 +1,10 @@
+
+/cache/*
+!/cache/README.md
+
+/vendor/
+
+
+/harvest-ids/cache
+harvest-ids/.DS_Store
+.DS_Store
