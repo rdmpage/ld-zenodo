@@ -4,7 +4,13 @@
 
 /vendor/
 
+/junk/
 
 /harvest-ids/cache
-harvest-ids/.DS_Store
+/harvest-ids/.DS_Store
+/harvest-ids/*.txt
+
+
 .DS_Store
+
+*.nt

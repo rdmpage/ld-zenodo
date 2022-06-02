@@ -17,12 +17,26 @@ $cuid = new EndyJasmi\Cuid;
 
 
 $force = false;
-$force = true;
+//$force = true;
 
+$count = 1;
 
 $files1 = scandir($config['cache']);
 
 //$files1 = array('3995'); // debugging
+
+//print_r($files1);
+//exit();
+
+// if we are restaring from a broken harvest,
+// ignore every directory up to this point.
+if (1)
+{
+	$from = 987;
+
+	$key = array_search($from, $files1);
+	$files1 = array_slice($files1, $key);
+}
 
 $nquads = new NQuads();
 
@@ -59,10 +73,19 @@ foreach ($files1 as $directory)
 					$serialized = $nquads->serialize($quads);
 					$serialized = fix_triples($serialized);
 					file_put_contents($output, $serialized);
+					
+					// Give server a break every 50 items
+					if (($count++ % 20) == 0)
+					{
+						$rand = rand(1000000, 3000000);
+						echo "\n...sleeping for " . round(($rand / 1000000),2) . ' seconds' . "\n\n";
+						usleep($rand);
+					}
+
 				}
 				else
 				{
-					echo "$id done\n";
+					//echo "$id done\n";
 				}
 			}
 		}
