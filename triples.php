@@ -32,7 +32,7 @@ $files1 = scandir($config['cache']);
 // ignore every directory up to this point.
 if (1)
 {
-	$from = 987;
+	$from = 3610;
 
 	$key = array_search($from, $files1);
 	$files1 = array_slice($files1, $key);

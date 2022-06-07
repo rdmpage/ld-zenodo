@@ -8,7 +8,7 @@ $filename = "ids.txt";
 $filename = "extra.txt";
 
 $force = false; // true if always grab new copy
-$force = true;
+//$force = true;
 $fresh = false; // true if refresh older copies
 
 $file_handle = fopen($filename, "r");
