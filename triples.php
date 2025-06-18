@@ -30,7 +30,7 @@ $files1 = scandir($config['cache']);
 
 // if we are restaring from a broken harvest,
 // ignore every directory up to this point.
-if (1)
+if (0)
 {
 	$from = 3610;
 

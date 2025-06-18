@@ -7,8 +7,9 @@ require_once(dirname(__FILE__) . '/core.php');
 $since = 0;
 
 // yesterday
-$since = strtotime('-1 hour');
-$since = strtotime('-5 minutes');
+//$since = strtotime('-1 hour');
+
+//$since = strtotime('-5 minutes');
 
 $files1 = scandir($config['cache']);
 

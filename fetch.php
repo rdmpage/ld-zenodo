@@ -20,6 +20,7 @@ while (!feof($file_handle))
 	
 	if ($id != '')
 	{
+		echo "$id\n";
 	
 		$data = get_one($id, $force, $fresh);
 	
